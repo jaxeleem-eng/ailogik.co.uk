@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Logik AI specializes in sourcing qualified, pipeline-ready leads for AI companies.",
   "scripts": {
-    "build": "echo 'No build step required for static site'"
+    "build": "mkdir -p dist && cp index.html dist/ && cp -r assets dist/"
   },
   "keywords": [],
   "author": "",
