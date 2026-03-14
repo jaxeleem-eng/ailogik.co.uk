@@ -61,6 +61,32 @@ body{
 /* Hero */
 .hero{
   position:relative; padding:150px 0 48px; overflow:hidden;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 15, 25, 0.65); /* Dark overlay */
+  z-index: 1;
+}
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 .hero-tag{
   display:inline-block; padding:6px 10px; border:1px solid var(--border); border-radius:999px; font-size:.85rem; opacity:.9
