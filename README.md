@@ -1,6 +1,6 @@
-# Logik AI
+# AI Logik
 
-Logik AI specializes in sourcing qualified, pipeline-ready leads for AI companies. This website provides an overview of our services, process, and success stories.
+AI Logik specializes in sourcing qualified, pipeline-ready leads for AI companies. This website provides an overview of our services, process, and success stories.
 
 ## Project Structure
 

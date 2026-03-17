@@ -1,7 +1,7 @@
 {
   "name": "ailogik.co.uk",
   "version": "1.0.0",
-  "description": "Logik AI specializes in sourcing qualified, pipeline-ready leads for AI companies.",
+  "description": "AI Logik specializes in sourcing qualified, pipeline-ready leads for AI companies.",
   "scripts": {
     "build": "mkdir dist && cp index.html dist/ && cp -r assets dist/"
   },
