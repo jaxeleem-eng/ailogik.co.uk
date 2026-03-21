@@ -43,7 +43,6 @@ body{
 .brand{display:flex; align-items:center; gap:14px; color:var(--text); text-decoration:none}
 .brand-img{
   width:200px; height:auto; object-fit:contain; 
-  mix-blend-mode: screen; /* Blends the black background of the logo */
   filter:drop-shadow(0 2px 12px rgba(0,0,0,.6)); 
   transition: transform 0.3s ease;
 }
