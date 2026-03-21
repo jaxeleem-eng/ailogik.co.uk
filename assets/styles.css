@@ -32,8 +32,9 @@ body{
 /* Header */
 .site-header{
   position:sticky; top:0; z-index:50;
-  background: #000000; /* Matching the deep black background of the logo */
-  border-bottom:none;
+  backdrop-filter:saturate(140%) blur(10px);
+  background:transparent;
+  border-bottom:1px solid rgba(255,255,255,.03);
 }
 .nav{
   display:flex; align-items:center; justify-content:space-between;
@@ -42,6 +43,7 @@ body{
 .brand{display:flex; align-items:center; gap:14px; color:var(--text); text-decoration:none}
 .brand-img{
   width:200px; height:auto; object-fit:contain; 
+  mix-blend-mode: screen; /* Blends the black background of the logo */
   filter:drop-shadow(0 2px 12px rgba(0,0,0,.6)); 
   transition: transform 0.3s ease;
 }
@@ -73,7 +75,7 @@ body{
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, #000000 0%, rgba(11, 15, 25, 0.75) 100%);
+  background: rgba(11, 15, 25, 0.65); /* Dark overlay */
   z-index: 1;
 }
 .bg-video {
