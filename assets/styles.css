@@ -32,9 +32,8 @@ body{
 /* Header */
 .site-header{
   position:sticky; top:0; z-index:50;
-  backdrop-filter:saturate(140%) blur(10px);
-  background: #0b0f19; /* Matching the dark background of the logo */
-  border-bottom:1px solid rgba(255,255,255,.05);
+  background: #000000; /* Matching the deep black background of the logo */
+  border-bottom:none;
 }
 .nav{
   display:flex; align-items:center; justify-content:space-between;
@@ -74,7 +73,7 @@ body{
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(11, 15, 25, 0.65); /* Dark overlay */
+  background: linear-gradient(180deg, #000000 0%, rgba(11, 15, 25, 0.75) 100%);
   z-index: 1;
 }
 .bg-video {
