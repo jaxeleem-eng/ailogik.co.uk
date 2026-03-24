@@ -106,7 +106,9 @@ body{
 
 /* Ticker */
 .stats-bar{
-  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+  background-color:#0c0f1a;
+  background-image:radial-gradient(rgba(0,229,255,0.07) 1px, transparent 1px);
+  background-size:32px 32px;
   overflow:hidden;
 }
 .ticker-track{
@@ -127,8 +129,20 @@ body{
 }
 
 /* Sections */
-.section{padding:72px 0; border-top:0}
-.section.alt{background:linear-gradient(180deg, rgba(255,255,255,.03), transparent)}
+.section{
+  padding:72px 0;
+  border-top:0;
+  background-color:#0c0f1a;
+  background-image:radial-gradient(rgba(0,229,255,0.07) 1px, transparent 1px);
+  background-size:32px 32px;
+}
+.section.alt{
+  background-color:#0c0f1a;
+  background-image:
+    radial-gradient(rgba(0,229,255,0.07) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255,255,255,.03), transparent);
+  background-size:32px 32px, auto;
+}
 .section-label{
   display:inline-flex;
   align-items:center;
