@@ -263,6 +263,8 @@ body{
 .site-footer{padding:40px 0; border-top:1px solid rgba(255,255,255,.06); background:rgba(10,12,20,.6); backdrop-filter:blur(10px)}
 .footer-inner{display:flex; flex-direction:column; align-items:center; gap:10px; text-align:center}
 .brand-row{opacity:.9; font-weight:600}
+.brand-row .brand-ai{color:var(--text)}
+.brand-row .brand-logik{color:#00bcd4}
 .footer-links{display:flex; gap:14px}
 .footer-links a{color:var(--text); opacity:.85; text-decoration:none}
 .footer-links a:hover{opacity:1}
