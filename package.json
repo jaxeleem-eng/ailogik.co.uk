@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "AI Logik specializes in sourcing qualified, pipeline-ready leads for AI companies.",
   "scripts": {
-    "build": "mkdir dist && cp index.html dist/ && cp -r assets dist/"
+    "build": "mkdir dist && cp index.html dist/ && cp ailogik-logo.png dist/ && cp -r assets dist/"
   },
   "keywords": [],
   "author": "",
