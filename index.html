@@ -3,101 +3,436 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ai LogiK — Pipeline‑Ready Leads for AI Companies</title>
-    <meta name="description" content="Ai LogiK sources qualified, pipeline‑ready leads for AI companies. Data‑driven prospecting, multi‑channel outreach, and appointment setting." />
-    <meta property="og:title" content="Ai LogiK — Pipeline‑Ready Leads for AI Companies" />
-    <meta property="og:description" content="Data‑driven lead sourcing and outreach for AI companies. Fill your pipeline with buyers, not noise." />
+    <title>AILogik — Pipeline‑Ready Leads for AI Companies</title>
+    <meta name="description" content="AILogik connects AI, SaaS and Cybersecurity startups with the customers they need to scale." />
+    <meta property="og:title" content="AILogik — Pipeline‑Ready Leads for AI Companies" />
+    <meta property="og:description" content="B2B lead generation for AI & cybersecurity. No fluff. No filler. Just results." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ailogik.co.uk/" />
-    <!-- Site Updated: 2026-03-18 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <style>
+      :root{
+        --bg:#060810;
+        --surface:#111520;
+        --accent:#00bcd4;
+        --text:#ffffff;
+        --muted:#6b7280;
+        --border:rgba(255,255,255,.08);
+        --shadow:0 18px 50px rgba(0,0,0,.45);
+        --radius:16px;
+      }
+      *{box-sizing:border-box}
+      html,body{margin:0;padding:0}
+      body{
+        font-family:"DM Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+        background:var(--bg);
+        color:var(--text);
+        line-height:1.55;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+      }
+      a{color:inherit}
+      .container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+      .nav{
+        position:fixed;top:0;left:0;right:0;z-index:100;
+        height:74px;
+        display:flex;align-items:center;
+        background:rgba(6,8,16,.28);
+        border-bottom:1px solid rgba(255,255,255,.06);
+        backdrop-filter:blur(12px) saturate(140%);
+        transition:background .25s ease, border-color .25s ease;
+      }
+      .nav.is-scrolled{background:rgba(6,8,16,.82);border-bottom-color:rgba(255,255,255,.10)}
+      .nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+      .logo{
+        display:flex;align-items:center;gap:12px;text-decoration:none;
+        font-family:"Syne",system-ui,sans-serif;font-weight:800;letter-spacing:.2px;
+      }
+      .logo-mark{width:34px;height:34px;display:block}
+      .logo-text{font-size:1.12rem}
+      .logo-text .ai{color:#fff}
+      .logo-text .logik{color:var(--accent)}
+
+      .nav-links{display:flex;align-items:center;gap:22px}
+      .nav-links a{text-decoration:none;color:rgba(255,255,255,.86);font-weight:500}
+      .nav-links a:hover{color:#fff}
+      .nav-cta{
+        display:inline-flex;align-items:center;justify-content:center;
+        padding:10px 14px;border-radius:12px;
+        background:var(--accent);color:#061018;font-weight:700;text-decoration:none;
+        box-shadow:0 10px 26px rgba(0,188,212,.18);
+      }
+      .nav-cta:hover{filter:brightness(1.05)}
+
+      .nav-toggle{
+        display:none;flex-direction:column;gap:6px;background:none;border:0;cursor:pointer;padding:10px;
+      }
+      .nav-toggle span{width:22px;height:2px;background:#fff;border-radius:2px;opacity:.9}
+
+      main{padding-top:74px}
+
+      .hero{
+        min-height:100vh;
+        display:flex;align-items:center;
+        position:relative;
+        background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1800&q=80&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+      .hero-overlay{
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(6,8,16,0.92) 0%, rgba(6,8,16,0.6) 100%);
+        z-index: 0;
+      }
+      .hero > :not(.hero-overlay){position: relative; z-index: 1}
+      .hero-content{padding:86px 0 52px}
+      .badge{
+        display:inline-flex;align-items:center;gap:10px;
+        padding:10px 14px;border-radius:999px;
+        border:1px solid rgba(0,188,212,.35);
+        background:rgba(0,188,212,.10);
+        color:#dffbff;
+        font-weight:600;
+        box-shadow:0 0 0 0 rgba(0,188,212,.35);
+        animation:pulse 2.2s ease-in-out infinite;
+      }
+      @keyframes pulse{
+        0%{box-shadow:0 0 0 0 rgba(0,188,212,.30)}
+        70%{box-shadow:0 0 0 18px rgba(0,188,212,0)}
+        100%{box-shadow:0 0 0 0 rgba(0,188,212,0)}
+      }
+      .hero h1{
+        margin:18px 0 12px;
+        font-family:"Syne",system-ui,sans-serif;
+        font-weight:800;
+        letter-spacing:-.02em;
+        font-size:clamp(2.6rem, 5vw, 4.2rem);
+        line-height:1.02;
+      }
+      .hero h1 .accent{color:var(--accent)}
+      .hero p{max-width:720px;color:rgba(255,255,255,.82);font-size:1.05rem;margin:0}
+      .hero-actions{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+      .btn{
+        display:inline-flex;align-items:center;justify-content:center;
+        padding:12px 16px;border-radius:14px;
+        font-weight:700;text-decoration:none;border:1px solid transparent;
+        transition:transform .18s ease, filter .18s ease, background .18s ease, border-color .18s ease;
+      }
+      .btn:hover{transform:translateY(-1px)}
+      .btn-primary{background:var(--accent);color:#061018;box-shadow:0 18px 40px rgba(0,188,212,.18)}
+      .btn-ghost{background:transparent;border-color:rgba(255,255,255,.18);color:#fff}
+      .btn-ghost:hover{border-color:rgba(255,255,255,.34)}
+
+      .ticker{
+        position:relative;
+        background:var(--bg);
+        border-top:1px solid rgba(255,255,255,.06);
+        border-bottom:1px solid rgba(255,255,255,.06);
+        overflow:hidden;
+      }
+      .ticker::before{
+        content:"";
+        position:absolute;inset:0;
+        background:radial-gradient(rgba(0,188,212,0.06) 1px, transparent 1px);
+        background-size:32px 32px;
+        opacity:.9;
+        pointer-events:none;
+      }
+      .ticker-track{
+        position:relative;
+        display:flex;gap:18px;align-items:center;white-space:nowrap;
+        padding:14px 0;
+        animation:ticker 34s linear infinite;
+      }
+      .ticker-item{color:rgba(255,255,255,.85)}
+      .ticker-item strong{color:var(--accent);font-weight:800}
+      .ticker-sep{opacity:.55;margin-left:10px}
+      @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+      .section{
+        padding:84px 0;
+        background:var(--bg);
+      }
+      .section.alt{
+        background:var(--bg);
+        position:relative;
+      }
+      .section.alt::before{
+        content:"";
+        position:absolute;inset:0;
+        background:radial-gradient(rgba(0,188,212,0.06) 1px, transparent 1px);
+        background-size:32px 32px;
+        pointer-events:none;
+        opacity:1;
+      }
+      .section.alt > *{position:relative;z-index:1}
+      .section-label{
+        display:inline-flex;align-items:center;
+        padding:8px 12px;border-radius:999px;
+        border:1px solid rgba(255,255,255,.10);
+        color:rgba(255,255,255,.72);
+        font-weight:600;
+        background:rgba(255,255,255,.02);
+      }
+      .section h2{
+        margin:14px 0 10px;
+        font-family:"Syne",system-ui,sans-serif;
+        font-weight:800;
+        letter-spacing:-.02em;
+        font-size:clamp(1.8rem, 2.4vw, 2.6rem);
+      }
+      .section p.sub{color:var(--muted);margin:0 0 24px}
+
+      .grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+      .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+      .card{
+        background:var(--surface);
+        border:1px solid var(--border);
+        border-radius:var(--radius);
+        padding:18px;
+        box-shadow:var(--shadow);
+      }
+      .card h3{margin:0 0 8px;font-size:1.05rem}
+      .card p{margin:0;color:rgba(255,255,255,.72)}
+
+      .stat-cards{display:grid;gap:12px}
+      .stat-num{
+        font-family:"Syne",system-ui,sans-serif;
+        font-weight:800;
+        font-size:1.65rem;
+        color:var(--accent);
+        letter-spacing:-.02em;
+      }
+      .stat-label{color:rgba(255,255,255,.70);margin-top:6px}
+
+      .steps{list-style:none;padding:0;margin:18px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+      .step{
+        position:relative;
+        min-height:140px;
+        padding:18px;
+        background:var(--surface);
+        border:1px solid var(--border);
+        border-radius:var(--radius);
+        box-shadow:var(--shadow);
+        overflow:hidden;
+      }
+      .step .n{
+        position:absolute;top:10px;right:14px;
+        font-family:"Syne",system-ui,sans-serif;
+        font-weight:800;
+        font-size:4rem;
+        line-height:1;
+        color:var(--accent);
+        opacity:.08;
+        user-select:none;
+      }
+      .step .t{position:relative;font-weight:800;margin-top:6px}
+      .pill{
+        display:inline-flex;align-items:center;
+        padding:6px 10px;border-radius:999px;
+        font-size:.82rem;font-weight:700;
+        border:1px solid rgba(0,188,212,.30);
+        color:#dffbff;
+        background:rgba(0,188,212,.10);
+        margin-top:14px;
+      }
+      .pill.muted{
+        border-color:rgba(255,255,255,.16);
+        background:rgba(255,255,255,.04);
+        color:rgba(255,255,255,.68);
+      }
+
+      .counters{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+      .counter{
+        text-align:center;
+        background:var(--surface);
+        border:1px solid var(--border);
+        border-radius:var(--radius);
+        padding:18px;
+        box-shadow:var(--shadow);
+      }
+      .counter .value{
+        font-family:"Syne",system-ui,sans-serif;
+        font-weight:800;
+        font-size:2rem;
+        color:var(--accent);
+        letter-spacing:-.02em;
+      }
+      .counter .label{display:block;margin-top:8px;color:rgba(255,255,255,.72);font-weight:600}
+
+      .cta{
+        background:linear-gradient(135deg, rgba(0,188,212,.12), rgba(255,255,255,0) 55%), var(--bg);
+        border-top:1px solid rgba(255,255,255,.06);
+        border-bottom:1px solid rgba(255,255,255,.06);
+      }
+      .cta-box{
+        display:grid;
+        grid-template-columns:1.2fr .8fr;
+        gap:18px;
+        background:rgba(17,21,32,.92);
+        border:1px solid rgba(255,255,255,.10);
+        border-radius:22px;
+        padding:22px;
+        box-shadow:var(--shadow);
+      }
+      .cta-form{display:flex;gap:10px;align-items:center}
+      .cta-form input{
+        flex:1;
+        height:44px;
+        border-radius:14px;
+        border:1px solid rgba(255,255,255,.14);
+        background:rgba(6,8,16,.6);
+        color:#fff;
+        padding:0 12px;
+        outline:none;
+      }
+      .cta-form input:focus{border-color:rgba(0,188,212,.45)}
+      .cta-note{margin:12px 0 0;color:rgba(255,255,255,.70)}
+      .cta-note a{color:var(--accent);text-decoration:none}
+
+      footer{
+        padding:38px 0;
+        background:var(--bg);
+      }
+      .footer-inner{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+      .footer-links{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+      .footer-links a{text-decoration:none;color:rgba(255,255,255,.82)}
+      .footer-links a:hover{color:#fff}
+      .fine{color:rgba(255,255,255,.62)}
+      .fine a{color:rgba(255,255,255,.62);text-decoration:none}
+      .fine a:hover{color:#fff}
+
+      .reveal{
+        opacity:0;
+        transform:translateY(12px);
+        transition:opacity .65s ease, transform .65s ease;
+      }
+      .reveal.is-visible{
+        opacity:1;
+        transform:translateY(0);
+      }
+
+      @media (max-width: 768px){
+        .nav-toggle{display:flex}
+        .nav-links{
+          position:absolute;
+          top:74px;
+          right:16px;
+          display:flex;
+          flex-direction:column;
+          gap:12px;
+          background:rgba(6,8,16,.92);
+          border:1px solid rgba(255,255,255,.10);
+          border-radius:16px;
+          padding:14px;
+          width:min(320px, calc(100vw - 32px));
+          opacity:0;
+          transform:scale(.98);
+          pointer-events:none;
+          transition:.18s ease;
+        }
+        .nav-links.is-open{opacity:1;transform:scale(1);pointer-events:auto}
+        .grid-2{grid-template-columns:1fr}
+        .cards{grid-template-columns:1fr}
+        .steps{grid-template-columns:1fr}
+        .counters{grid-template-columns:1fr}
+        .cta-box{grid-template-columns:1fr}
+        .cta-form{flex-direction:column;align-items:stretch}
+        .hero h1{font-size:clamp(2.2rem, 8vw, 4rem)}
+      }
+    </style>
   </head>
   <body>
-    <header class="site-header">
-      <div class="container nav">
-        <a href="/" class="brand" aria-label="AILogik home">
-          <img src="/ailogik-logo.png" alt="AILogik" style="height: 44px; width: auto; object-fit: contain;" />
+    <header class="nav" id="nav">
+      <div class="container nav-inner">
+        <a class="logo" href="/" aria-label="AILogik home">
+          <svg class="logo-mark" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AILogik neural mark">
+            <circle cx="14" cy="24" r="9" fill="none" stroke="#00bcd4" stroke-width="2.5"/>
+            <circle cx="14" cy="24" r="2.2" fill="#00bcd4"/>
+            <circle cx="34" cy="16" r="5.4" fill="none" stroke="#00bcd4" stroke-width="2.2"/>
+            <circle cx="34" cy="34" r="5.4" fill="none" stroke="#00bcd4" stroke-width="2.2"/>
+            <line x1="20.5" y1="20.6" x2="28.7" y2="17.6" stroke="#00bcd4" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="20.5" y1="27.4" x2="28.7" y2="31.0" stroke="#00bcd4" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          <span class="logo-text"><span class="ai">AI</span><span class="logik">LogiK</span></span>
         </a>
-        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
-        <nav class="nav-links" aria-label="Primary">
+
+        <nav class="nav-links" id="navLinks" aria-label="Primary">
           <a href="#growth">The Market</a>
           <a href="#how">How It Works</a>
           <a href="#sectors">Sectors</a>
           <a href="#why">Why Us</a>
-          <a href="#contact" class="btn btn-primary">Get Leads</a>
+          <a class="nav-cta" href="#contact">Get Leads</a>
         </nav>
       </div>
     </header>
 
     <main>
-      <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1800&q=80&auto=format'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,8,16,0.85) 0%,rgba(6,8,16,0.55) 100%);z-index:0;"></div>
+      <section class="hero" id="top">
+        <div class="hero-overlay"></div>
         <div class="container hero-content">
-          <div class="hero-tag">B2B Lead Generation · AI &amp; Cybersecurity</div>
-          <h1 class="hero-title">Fuel Your <span class="accent">Growth</span> With Quality Leads.</h1>
-          <p class="hero-sub">AILogik connects AI, SaaS and Cybersecurity startups with the customers they need to scale. No fluff. No filler. Just results.</p>
-          <div class="hero-ctas">
-            <a href="#contact" class="btn btn-primary btn-lg">Start Generating Leads</a>
-            <a href="#how" class="btn btn-ghost btn-lg">See How It Works</a>
+          <div class="badge reveal">B2B Lead Generation · AI &amp; Cybersecurity</div>
+          <h1 class="reveal">Fuel Your <span class="accent">Growth</span> With Quality Leads.</h1>
+          <p class="reveal">AILogik connects AI, SaaS and Cybersecurity startups with the customers they need to scale. No fluff. No filler. Just results.</p>
+          <div class="hero-actions reveal">
+            <a class="btn btn-primary" href="#contact">Start Generating Leads</a>
+            <a class="btn btn-ghost" href="#how">See How It Works</a>
           </div>
-          <div class="hero-metrics">
-            <div><span class="num">$1.8T</span><span class="label">AI market by 2030</span></div>
-            <div><span class="num">28.5%</span><span class="label">CAGR in AI</span></div>
-            <div><span class="num">$479B</span><span class="label">Cybersecurity by 2030</span></div>
-          </div>
-        </div>
-        <div class="bg-blur b1"></div>
-        <div class="bg-blur b2"></div>
-      </section>
-
-      <section class="stats-bar" aria-label="Market stats ticker">
-        <div class="ticker-track" aria-hidden="true">
-          <span class="ticker-item"><strong>$1.8T</strong> AI market by 2030 <span class="ticker-sep">—</span></span>
-          <span class="ticker-item"><strong>28.5%</strong> CAGR in AI <span class="ticker-sep">—</span></span>
-          <span class="ticker-item"><strong>$479B</strong> Cybersecurity market by 2030 <span class="ticker-sep">—</span></span>
-          <span class="ticker-item"><strong>12%</strong> CAGR in Cybersecurity <span class="ticker-sep">—</span></span>
-          <span class="ticker-item"><strong>70%</strong> of companies increasing AI spend <span class="ticker-sep">—</span></span>
-          <span class="ticker-item"><strong>3.5M</strong> unfilled cybersecurity jobs globally <span class="ticker-sep">—</span></span>
-          <span class="ticker-item"><strong>#1</strong> B2B Lead Gen for AI Startups <span class="ticker-sep">—</span></span>
-          <span class="ticker-item"><strong>$1.8T</strong> AI market by 2030 <span class="ticker-sep">—</span></span>
-          <span class="ticker-item"><strong>28.5%</strong> CAGR in AI <span class="ticker-sep">—</span></span>
-          <span class="ticker-item"><strong>$479B</strong> Cybersecurity market by 2030 <span class="ticker-sep">—</span></span>
-          <span class="ticker-item"><strong>12%</strong> CAGR in Cybersecurity <span class="ticker-sep">—</span></span>
-          <span class="ticker-item"><strong>70%</strong> of companies increasing AI spend <span class="ticker-sep">—</span></span>
-          <span class="ticker-item"><strong>3.5M</strong> unfilled cybersecurity jobs globally <span class="ticker-sep">—</span></span>
-          <span class="ticker-item"><strong>#1</strong> B2B Lead Gen for AI Startups <span class="ticker-sep">—</span></span>
         </div>
       </section>
 
-      <section id="growth" class="section">
+      <section class="ticker" aria-label="Market stats ticker">
         <div class="container">
-          <div class="section-label">The Opportunity</div>
-          <h2 class="section-title">The Market Is Exploding. Are You Keeping Up?</h2>
-          <p class="section-sub">The companies that win are the ones acquiring customers fastest.</p>
+          <div class="ticker-track" aria-hidden="true">
+            <span class="ticker-item"><strong>$1.8T</strong> AI market by 2030 <span class="ticker-sep">—</span></span>
+            <span class="ticker-item"><strong>28.5%</strong> CAGR in AI <span class="ticker-sep">—</span></span>
+            <span class="ticker-item"><strong>$479B</strong> Cybersecurity by 2030 <span class="ticker-sep">—</span></span>
+            <span class="ticker-item"><strong>12%</strong> CAGR Cybersecurity <span class="ticker-sep">—</span></span>
+            <span class="ticker-item"><strong>70%</strong> of companies increasing AI spend <span class="ticker-sep">—</span></span>
+            <span class="ticker-item"><strong>3.5M</strong> unfilled cybersecurity jobs globally <span class="ticker-sep">—</span></span>
+            <span class="ticker-item"><strong>$1.8T</strong> AI market by 2030 <span class="ticker-sep">—</span></span>
+            <span class="ticker-item"><strong>28.5%</strong> CAGR in AI <span class="ticker-sep">—</span></span>
+            <span class="ticker-item"><strong>$479B</strong> Cybersecurity by 2030 <span class="ticker-sep">—</span></span>
+            <span class="ticker-item"><strong>12%</strong> CAGR Cybersecurity <span class="ticker-sep">—</span></span>
+            <span class="ticker-item"><strong>70%</strong> of companies increasing AI spend <span class="ticker-sep">—</span></span>
+            <span class="ticker-item"><strong>3.5M</strong> unfilled cybersecurity jobs globally <span class="ticker-sep">—</span></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="growth">
+        <div class="container">
+          <div class="section-label reveal">The Opportunity</div>
+          <h2 class="reveal">The Market Is Exploding. Are You Keeping Up?</h2>
+          <p class="sub reveal">The AI and cybersecurity markets are compounding fast. The winners acquire customers the fastest.</p>
           <div class="grid-2">
-            <div>
-              <p>The AI industry is growing at a pace the world has never seen before. By 2030, the global AI market is projected to surpass <strong>$1.8 trillion</strong> — growing at 28.5% every single year.</p>
+            <div class="reveal">
+              <p>The AI industry is scaling at a pace the world has never seen before. By 2030, the global AI market is projected to surpass <strong>$1.8 trillion</strong> — growing at 28.5% every single year.</p>
               <p>Cybersecurity is on the same trajectory. With every new AI system deployed, new attack surfaces open. The market is expected to nearly <strong>triple by 2030</strong>.</p>
-              <p>These aren't industries where you wait for leads to find you. <strong>The companies that win are the ones acquiring customers fastest.</strong> That's where AILogik comes in.</p>
-              <div class="cta-row">
-                <a href="#contact" class="btn btn-primary btn-lg">Let's Talk</a>
+              <p>These aren’t industries where you wait for leads to find you. <strong>The companies that win are the ones acquiring customers fastest.</strong></p>
+              <div style="margin-top:18px">
+                <a class="btn btn-primary" href="#contact">Let’s Talk</a>
               </div>
             </div>
-            <div class="grid">
-              <div class="card stat-card">
+            <div class="stat-cards reveal">
+              <div class="card">
                 <div class="stat-num">$1.8T</div>
                 <div class="stat-label">Projected global AI market value by 2030</div>
               </div>
-              <div class="card stat-card">
+              <div class="card">
                 <div class="stat-num">28.5%</div>
                 <div class="stat-label">AI industry CAGR — fastest growing sector</div>
               </div>
-              <div class="card stat-card">
+              <div class="card">
                 <div class="stat-num">$479B</div>
                 <div class="stat-label">Cybersecurity market by 2030</div>
               </div>
@@ -106,150 +441,212 @@
         </div>
       </section>
 
-      <section id="how" class="section alt">
+      <section class="section alt" id="how">
         <div class="container">
-          <div class="section-label">Our Process</div>
-          <h2 class="section-title">Ronseal Simple. Exceptionally Effective.</h2>
-          <p class="section-sub">A focused, repeatable process that delivers high-quality B2B leads into your pipeline — fast.</p>
-          <ol class="steps">
-            <li><span>01</span> Sector focus</li>
-            <li><span>02</span> Audience mapping</li>
-            <li><span>03</span> Lead activation</li>
-            <li><span>04</span> Scale & repeat</li>
-          </ol>
+          <div class="section-label reveal">Our Process</div>
+          <h2 class="reveal">Ronseal Simple. Exceptionally Effective.</h2>
+          <p class="sub reveal">A focused, repeatable process that delivers high-quality B2B leads into your pipeline — fast.</p>
+          <div class="steps">
+            <div class="step reveal"><div class="n">01</div><div class="t">Sector Focus</div><p>We run one targeted campaign per sector with precision rather than scattergun marketing.</p></div>
+            <div class="step reveal"><div class="n">02</div><div class="t">Audience Mapping</div><p>We map your ideal decision-maker profile and build a qualified audience ready to buy.</p></div>
+            <div class="step reveal"><div class="n">03</div><div class="t">Lead Activation</div><p>We engage prospects via multi-channel outreach and qualify interest before handover.</p></div>
+            <div class="step reveal"><div class="n">04</div><div class="t">Scale &amp; Repeat</div><p>Once it works, we scale aggressively, then move to the next sector and repeat.</p></div>
+          </div>
         </div>
       </section>
 
-      <section id="sectors" class="section">
+      <section class="section" id="sectors">
         <div class="container">
-          <div class="section-label">Our Specialisms</div>
-          <h2 class="section-title">The Sectors We Dominate.</h2>
-          <p class="section-sub">We go deep in the industries we know — and where the growth is biggest.</p>
+          <div class="section-label reveal">Our Specialisms</div>
+          <h2 class="reveal">The Sectors We Dominate.</h2>
+          <p class="sub reveal">We go deep in the industries we know — and where the growth is biggest.</p>
           <div class="cards">
-            <article class="card">
-              <div class="icon">🤖</div>
+            <div class="card reveal">
               <h3>Artificial Intelligence</h3>
-              <p>From generative AI platforms to AI-powered analytics tools, we connect AI vendors with businesses ready to buy and deploy.</p>
+              <p>We connect AI vendors with businesses ready to buy and deploy across real use-cases.</p>
               <div class="pill">Active Campaign</div>
-            </article>
-            <article class="card">
-              <div class="icon">🔐</div>
+            </div>
+            <div class="card reveal">
               <h3>Cybersecurity</h3>
-              <p>Every organisation is a potential target. We build pipeline for cybersecurity startups by finding and qualifying buyers.</p>
+              <p>We build a constant pipeline of qualified security buyers for startups who need growth.</p>
               <div class="pill">Active Campaign</div>
-            </article>
-            <article class="card">
-              <div class="icon">☁️</div>
+            </div>
+            <div class="card reveal">
               <h3>SaaS</h3>
-              <p>SaaS is a volume game. We help you find high-fit B2B customers in growth-stage businesses who stay, expand, and refer.</p>
-              <div class="pill pill-muted">Coming Soon</div>
-            </article>
+              <p>We help SaaS teams find high-fit B2B customers who stay, expand, and refer.</p>
+              <div class="pill muted">Coming Soon</div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="why" class="section alt">
+      <section class="section alt" id="why">
         <div class="container">
-          <div class="section-label">Why AILogik</div>
-          <h2 class="section-title">Built for Startups That Move Fast.</h2>
-          <p class="section-sub">We understand the urgency, the growth targets, and the need for quality over quantity.</p>
+          <div class="section-label reveal">Why AILogik</div>
+          <h2 class="reveal">Built for Startups That Move Fast.</h2>
+          <p class="sub reveal">We built AILogik for AI businesses that need quality pipeline at startup pace.</p>
           <div class="cards">
-            <article class="card">
-              <div class="icon">🎯</div>
-              <h3>Sector-specific expertise</h3>
-              <p>We understand the buyers, objections, and conversations that convert in AI and Cybersecurity.</p>
-            </article>
-            <article class="card">
-              <div class="icon">⚡</div>
-              <h3>Speed to pipeline</h3>
-              <p>We move at startup pace — delivering qualified leads into your pipeline within weeks, not quarters.</p>
-            </article>
-            <article class="card">
-              <div class="icon">✅</div>
-              <h3>Verified leads only</h3>
-              <p>No junk lists. Every lead is decision-maker level and verified to be relevant.</p>
-            </article>
-            <article class="card">
-              <div class="icon">📈</div>
-              <h3>Scales with you</h3>
-              <p>As your business grows, lead volume grows with it — sector by sector, market by market.</p>
-            </article>
-            <article class="card">
-              <div class="icon">🧠</div>
-              <h3>B2B only</h3>
-              <p>We understand buying committees, procurement, and what it takes to get deals moving.</p>
-            </article>
-            <article class="card">
-              <div class="icon">🔁</div>
-              <h3>No fluff. Just results.</h3>
-              <p>Transparent reporting, honest metrics, and a relentless focus on what matters: closed business.</p>
-            </article>
+            <div class="card reveal"><h3>Sector-Specific Expertise</h3><p>We understand the buyers, objections and conversations that convert.</p></div>
+            <div class="card reveal"><h3>Speed to Pipeline</h3><p>We deliver qualified leads into your pipeline in weeks, not quarters.</p></div>
+            <div class="card reveal"><h3>Verified Leads Only</h3><p>No junk lists. Every lead is decision-maker level and relevant.</p></div>
+            <div class="card reveal"><h3>Scales With You</h3><p>As you grow, lead volume grows with you — sector by sector.</p></div>
+            <div class="card reveal"><h3>B2B Only</h3><p>We know buying committees, procurement and complex sales cycles.</p></div>
+            <div class="card reveal"><h3>No Fluff Just Results</h3><p>Transparent metrics, honest reporting and a focus on closed business.</p></div>
           </div>
         </div>
       </section>
 
-      <section id="numbers" class="section">
+      <section class="section" id="numbers">
         <div class="container">
-          <div class="section-label">By The Numbers</div>
-          <h2 class="section-title">AILogik In Action</h2>
-          <p class="section-sub">Fast, measurable, and built to scale.</p>
-          <div class="big-counters">
-            <div class="big-count">
-              <span class="count-num" data-target="500">0</span>
-              <span class="count-label">Leads Delivered Monthly</span>
+          <div class="section-label reveal">By The Numbers</div>
+          <h2 class="reveal">AILogik In Action</h2>
+          <p class="sub reveal">Growing alongside the industries we serve — fast, measurable, built to scale.</p>
+          <div class="counters">
+            <div class="counter reveal"><div class="value" data-count="500">0</div><span class="label">Leads Delivered Monthly</span></div>
+            <div class="counter reveal"><div class="value" data-count="3">0</div><span class="label">Active Sectors</span></div>
+            <div class="counter reveal"><div class="value" data-count="94">0</div><span class="label">% Lead Accuracy Rate</span></div>
+            <div class="counter reveal"><div class="value" data-count="48">0</div><span class="label">Hr Avg Time to First Lead</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta" id="contact">
+        <div class="container">
+          <div class="cta-box reveal">
+            <div>
+              <div class="section-label">Let’s Work Together</div>
+              <h2>Ready to Fill Your Pipeline?</h2>
+              <p class="sub">Tell us about your product and ideal customer. We’ll tell you exactly how we can get you in front of them — fast.</p>
             </div>
-            <div class="big-count">
-              <span class="count-num" data-target="3">0</span>
-              <span class="count-label">Active Sectors</span>
-            </div>
-            <div class="big-count">
-              <span class="count-num" data-target="94">0</span>
-              <span class="count-label">% Lead Accuracy Rate</span>
-            </div>
-            <div class="big-count">
-              <span class="count-num" data-target="48">0</span>
-              <span class="count-label">Hr Avg. Time to First Lead</span>
+            <div>
+              <div class="cta-form">
+                <input type="email" id="ctaEmail" placeholder="Enter your work email" />
+                <button class="btn btn-primary" id="ctaBtn" type="button">Get Started</button>
+              </div>
+              <div class="cta-note" id="ctaMsg" style="display:none">✓ Great — we’ll be in touch within 24 hours.</div>
+              <div class="cta-note">Or email us directly at <a href="mailto:jj@ailogik.co.uk">jj@ailogik.co.uk</a></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="contact" class="section contact">
-        <div class="container contact-box">
-          <div class="contact-copy">
-            <div class="section-label">Let's Work Together</div>
-            <h2 class="section-title">Ready to Fill Your Pipeline?</h2>
-            <p>Tell us about your product and ideal customer. We'll tell you exactly how we can get you in front of them — fast.</p>
+      <footer>
+        <div class="container footer-inner">
+          <a class="logo" href="/" aria-label="AILogik home">
+            <svg class="logo-mark" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AILogik neural mark">
+              <circle cx="14" cy="24" r="9" fill="none" stroke="#00bcd4" stroke-width="2.5"/>
+              <circle cx="14" cy="24" r="2.2" fill="#00bcd4"/>
+              <circle cx="34" cy="16" r="5.4" fill="none" stroke="#00bcd4" stroke-width="2.2"/>
+              <circle cx="34" cy="34" r="5.4" fill="none" stroke="#00bcd4" stroke-width="2.2"/>
+              <line x1="20.5" y1="20.6" x2="28.7" y2="17.6" stroke="#00bcd4" stroke-width="2.2" stroke-linecap="round"/>
+              <line x1="20.5" y1="27.4" x2="28.7" y2="31.0" stroke="#00bcd4" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+            <span class="logo-text"><span class="ai">AI</span><span class="logik">LogiK</span></span>
+          </a>
+
+          <div class="footer-links">
+            <a href="#growth">The Market</a>
+            <a href="#how">How It Works</a>
+            <a href="#sectors">Sectors</a>
+            <a href="#why">Why Us</a>
+            <a href="#contact">Get Leads</a>
           </div>
-          <div class="contact-form" aria-label="Contact form">
-            <div class="cta-form">
-              <input type="email" placeholder="Enter your work email" id="email-input" />
-              <button class="btn btn-primary btn-lg" id="cta-submit" type="button">Get Started</button>
-            </div>
-            <p id="form-msg" class="small muted hidden">✓ Great — we'll be in touch within 24 hours.</p>
-            <p class="small muted">Or email <a href="mailto:jj@ailogik.co.uk?subject=Lead%20Generation%20Request">jj@ailogik.co.uk</a></p>
-          </div>
+
+          <div class="fine">© 2026 AILogik · <a href="https://ailogik.co.uk">ailogik.co.uk</a></div>
         </div>
-      </section>
+      </footer>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <div class="brand-row">
-          <span class="brand-text"><span class="brand-ai">AI</span><span class="brand-logik">LogiK</span></span>
-          <span class="dot">•</span>
-          <span>Marketing & Lead Generation</span>
-        </div>
-        <div class="footer-links">
-          <a href="#growth">The Market</a>
-          <a href="#how">How It Works</a>
-          <a href="#sectors">Sectors</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="small muted">© <span id="year"></span> Ai LogiK. All rights reserved. · <a href="https://ailogik.co.uk">ailogik.co.uk</a></div>
-      </div>
-    </footer>
+    <script>
+      const nav = document.getElementById("nav");
+      const navToggle = document.getElementById("navToggle");
+      const navLinks = document.getElementById("navLinks");
 
-    <script src="./assets/app.js" defer></script>
+      const setScrolled = () => {
+        if (window.scrollY > 8) nav.classList.add("is-scrolled");
+        else nav.classList.remove("is-scrolled");
+      };
+      setScrolled();
+      window.addEventListener("scroll", setScrolled, { passive: true });
+
+      navToggle.addEventListener("click", () => {
+        const open = navLinks.classList.toggle("is-open");
+        navToggle.setAttribute("aria-expanded", String(open));
+      });
+      navLinks.querySelectorAll("a[href^='#']").forEach(a => {
+        a.addEventListener("click", () => {
+          navLinks.classList.remove("is-open");
+          navToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      document.querySelectorAll("a[href^='#']").forEach(a => {
+        a.addEventListener("click", e => {
+          const id = a.getAttribute("href").slice(1);
+          const el = document.getElementById(id);
+          if (!el) return;
+          e.preventDefault();
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+
+      const revealEls = Array.from(document.querySelectorAll(".reveal"));
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.12 });
+      revealEls.forEach(el => revealObserver.observe(el));
+
+      const counters = Array.from(document.querySelectorAll("[data-count]"));
+      const animateCounter = (el, to) => {
+        const duration = 1700;
+        const start = performance.now();
+        const tick = now => {
+          const t = Math.min(1, (now - start) / duration);
+          el.textContent = String(Math.floor(to * t));
+          if (t < 1) requestAnimationFrame(tick);
+          else el.textContent = String(to);
+        };
+        requestAnimationFrame(tick);
+      };
+      if (counters.length) {
+        const counterObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const to = Number(el.getAttribute("data-count")) || 0;
+            animateCounter(el, to);
+            counterObserver.unobserve(el);
+          });
+        }, { threshold: 0.45 });
+        counters.forEach(el => counterObserver.observe(el));
+      }
+
+      const ctaEmail = document.getElementById("ctaEmail");
+      const ctaBtn = document.getElementById("ctaBtn");
+      const ctaMsg = document.getElementById("ctaMsg");
+      const submitCta = () => {
+        const value = String(ctaEmail.value || "").trim();
+        const ok = value.includes("@") && value.includes(".");
+        if (ok) {
+          ctaMsg.style.display = "block";
+          ctaEmail.value = "";
+          ctaEmail.style.borderColor = "";
+          return;
+        }
+        ctaEmail.style.borderColor = "#ff4444";
+        window.setTimeout(() => { ctaEmail.style.borderColor = ""; }, 1200);
+      };
+      ctaBtn.addEventListener("click", submitCta);
+      ctaEmail.addEventListener("keydown", e => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          submitCta();
+        }
+      });
+    </script>
   </body>
 </html>
