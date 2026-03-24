@@ -345,7 +345,7 @@ main > section + section::before{
   .contact-box{grid-template-columns:1fr}
   .big-counters{grid-template-columns:repeat(2,1fr)}
 }
-@media (max-width: 680px){
+@media (max-width: 768px){
   .nav-toggle{display:flex}
   .nav-links{
     position:absolute; top:140px; right:14px;
@@ -358,6 +358,7 @@ main > section + section::before{
   .cards{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
   .hero{padding:100px 0 36px}
+  .hero-title{font-size:clamp(2.2rem, 8vw, 4rem)}
   .big-counters{grid-template-columns:1fr}
   .cta-form{flex-direction:column}
 }
