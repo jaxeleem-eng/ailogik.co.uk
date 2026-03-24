@@ -42,5 +42,63 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = `mailto:hello@ailogik.co.uk?subject=${subject}&body=${body}`;
     });
   }
-});
 
+  const ctaEmailInput = document.getElementById("email-input");
+  const ctaSubmit = document.getElementById("cta-submit");
+  const ctaMsg = document.getElementById("form-msg");
+  const submitCta = () => {
+    if (!ctaEmailInput || !ctaMsg) return;
+    const value = String(ctaEmailInput.value || "").trim();
+    const ok = value.includes("@") && value.includes(".");
+    if (ok) {
+      ctaMsg.classList.remove("hidden");
+      ctaEmailInput.value = "";
+      ctaEmailInput.style.borderColor = "";
+      return;
+    }
+    ctaEmailInput.style.borderColor = "#ff4444";
+    window.setTimeout(() => {
+      ctaEmailInput.style.borderColor = "";
+    }, 1500);
+  };
+  if (ctaSubmit) ctaSubmit.addEventListener("click", submitCta);
+  if (ctaEmailInput) {
+    ctaEmailInput.addEventListener("keydown", e => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        submitCta();
+      }
+    });
+  }
+
+  const counters = Array.from(document.querySelectorAll(".count-num[data-target]"));
+  const animateCounter = (el, target) => {
+    const duration = 1800;
+    const start = performance.now();
+    const from = 0;
+    const to = Number.isFinite(target) ? target : 0;
+    const tick = now => {
+      const t = Math.min(1, (now - start) / duration);
+      const value = Math.floor(from + (to - from) * t);
+      el.textContent = String(value);
+      if (t < 1) requestAnimationFrame(tick);
+      else el.textContent = String(to);
+    };
+    requestAnimationFrame(tick);
+  };
+  if (counters.length) {
+    const counterObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          const target = Number(el.getAttribute("data-target"));
+          animateCounter(el, target);
+          counterObserver.unobserve(el);
+        });
+      },
+      { threshold: 0.5 }
+    );
+    counters.forEach(el => counterObserver.observe(el));
+  }
+});
