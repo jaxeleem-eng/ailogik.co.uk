@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const body = encodeURIComponent(
         `Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\nMessage:\n${message}`
       );
-      window.location.href = `mailto:hello@ailogik.co.uk?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:jj@ailogik.co.uk?subject=${subject}&body=${body}`;
     });
   }
 
