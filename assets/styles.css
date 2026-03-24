@@ -1,5 +1,5 @@
 :root{
-  --bg:#0b0f19;
+  --bg:#060810;
   --bg-alt:#0f1424;
   --text:#e6e9ef;
   --muted:#98a0b3;
@@ -15,6 +15,7 @@
 html,body{margin:0}
 body{
   font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background-color:var(--bg);
   background: radial-gradient(1200px 600px at 80% -20%, rgba(124,92,255,.18), transparent 60%),
               radial-gradient(800px 500px at -10% -10%, rgba(0,229,255,.16), transparent 55%),
               var(--bg);
@@ -105,8 +106,6 @@ body{
 
 /* Ticker */
 .stats-bar{
-  border-top:1px solid rgba(255,255,255,.06);
-  border-bottom:1px solid rgba(255,255,255,.06);
   background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
   overflow:hidden;
 }
@@ -128,7 +127,7 @@ body{
 }
 
 /* Sections */
-.section{padding:72px 0; border-top:1px solid rgba(255,255,255,.06)}
+.section{padding:72px 0; border-top:0}
 .section.alt{background:linear-gradient(180deg, rgba(255,255,255,.03), transparent)}
 .section-label{
   display:inline-flex;
@@ -275,6 +274,31 @@ body{
 .grid{display:grid; gap:16px}
 .grid-cols-3{grid-template-columns:repeat(3,1fr)}
 .hidden{display:none}
+
+main > section{position:relative}
+main > section + section::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:64px;
+  transform:translateY(-50%);
+  pointer-events:none;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,229,255,0.03) 50%, transparent 100%);
+}
+.site-footer{position:relative}
+.site-footer::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:64px;
+  transform:translateY(-50%);
+  pointer-events:none;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,229,255,0.03) 50%, transparent 100%);
+}
 
 /* Responsive */
 @media (max-width: 900px){
